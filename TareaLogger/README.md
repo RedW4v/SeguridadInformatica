@@ -62,4 +62,4 @@ El programa maneja la tecla modificadora shift para registrar correctamente cara
 ## Advertencia
 Este keylogger debe usarse únicamente para fines educativos o en sistemas donde tengas permiso explícito para registrar las teclas. El uso de keyloggers sin consentimiento es ilegal y antiético.
 
-######Elaborado por Joshua René Cruz Ramírez para la clase de Seguridad Informática en la FES Aragón
+###Elaborado por Joshua René Cruz Ramírez para la clase de Seguridad Informática en la FES Aragón
