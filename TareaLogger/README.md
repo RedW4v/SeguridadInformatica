@@ -38,8 +38,8 @@ El keylogger empezará a registrar las teclas presionadas y almacenará la infor
 ## Casos de Uso
 
 - Monitoreo de Entrada de Teclado: Para registrar todas las teclas presionadas en un sistema para propósitos educativos o de investigación en ciberseguridad.
--- Pruebas de Seguridad: Para analizar el comportamiento de las aplicaciones en términos de manejo de entradas de teclado y seguridad en aplicaciones que usan datos de entrada del usuario.
--- Investigación Académica: En un entorno de laboratorio para estudiar la seguridad de sistemas y el impacto de los keyloggers en la seguridad de la información.
+- Pruebas de Seguridad: Para analizar el comportamiento de las aplicaciones en términos de manejo de entradas de teclado y seguridad en aplicaciones que usan datos de entrada del usuario.
+- Investigación Académica: En un entorno de laboratorio para estudiar la seguridad de sistemas y el impacto de los keyloggers en la seguridad de la información.
 
 ## Cómo Funciona
 **Detección del Dispositivo de Entrada:**
