@@ -25,7 +25,7 @@ Ejecuta el keylogger con permisos de superusuario (necesarios para acceder a los
   
 El keylogger empezará a registrar las teclas presionadas y almacenará la información en el archivo log.txt especificado en el código.
 
-##Puedes modificar la ruta del archivo de log en el código fuente si es necesario:
+## Puedes modificar la ruta del archivo de log en el código fuente si es necesario:
 
 `define LOGFILEPATH "/home/kali/Documents/escuela/Sec/TareaLogger/log.txt"`
 
